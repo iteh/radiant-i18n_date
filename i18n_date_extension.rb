@@ -20,5 +20,10 @@ class I18nDateExtension < Radiant::Extension
     #   add_item "I18n Date", "/admin/i18n_date", :after => "Pages"
     # end
     Page.send :include, I18nDateTags
+    
+    Page.descendants.each do |klass|
+      next unless klass.included_modules.include?(ArchiveIndexTagsAndMethods)
+      klass.send :include, I18nDateTitleTags
+    end
   end
 end
