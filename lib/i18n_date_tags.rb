@@ -34,7 +34,7 @@ module I18nDateTags
       page.published_at || page.created_at
     end
   
-    I18n.l date, :format => format
+    I18n.l date, :format => format, :locale => I18n.default_locale
   end
 
 end

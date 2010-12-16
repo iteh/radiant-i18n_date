@@ -8,7 +8,7 @@ describe 'I18nDateTags' do
       format = "%B %Y"
       tag = %{<r:i18n:date format="#{format}"/>}
       
-      expected = I18n.l(Date.today, :format => format)
+      expected = I18n.l(Date.today, :format => format, :locale => I18n.default_locale)
     
       pages(:home).should render(tag).as(expected)
     end
