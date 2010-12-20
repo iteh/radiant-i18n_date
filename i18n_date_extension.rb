@@ -4,7 +4,7 @@
 class I18nDateExtension < Radiant::Extension
   version "1.0"
   description "Provides a <r:i18n:date /> tag, which formats date with i18n rules"
-  url "http://github.com/mikz/radiant-i18n_date/"
+  url "http://github.com/iteh/radiant-i18n_date/"
   
   # extension_config do |config|
   #   config.gem 'some-awesome-gem

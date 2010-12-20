@@ -5,7 +5,7 @@ module I18nDateTitleTags
     setup_date_parts
     page = tag.locals.page
     unless @year.nil?
-      I18n.l(Date.new((@year || 1).to_i, (@month || 1).to_i, (@day || 1).to_i), :format => page.title, :locale => I18n.default_locale)
+      I18n.l(Date.new((@year || 1).to_i, (@month || 1).to_i, (@day || 1).to_i), :format => page.title)
     else
       page.title
     end

@@ -1,10 +1,6 @@
 module I18nDateTags
   include Radiant::Taggable
   
-  tag 'i18n' do |tag|
-    tag.expand
-  end
-  
   desc %{
     Renders the date based on the current page (by default when it was published or created).
     The format attribute uses the same formating codes used by the Ruby @strftime@ function, but its formatted by I18n library. By
@@ -17,7 +13,7 @@ module I18nDateTags
     <pre><code><r:i18n:date [format="%A, %B %d, %Y"] [for="published_at"]/></code></pre>
   }
   
-  tag 'i18n:date' do |tag|
+  tag 'date' do |tag|
     page = tag.locals.page
     format = (tag.attr['format'] || '%A, %B %d, %Y')
     time_attr = tag.attr['for']
@@ -34,7 +30,7 @@ module I18nDateTags
       page.published_at || page.created_at
     end
   
-    I18n.l date, :format => format, :locale => I18n.default_locale
+    I18n.l date, :format => format
   end
 
 end
